@@ -9,7 +9,7 @@ function Nav(props) {
   } = props;
 
 
-  useEffect(() => {document.title = currentCategory.name}, [currentCategory]);
+  // useEffect(() => {document.title = currentCategory.name}, [currentCategory]);
 
   return (
     <header className="flex-row px-1">

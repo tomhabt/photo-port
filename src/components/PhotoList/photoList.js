@@ -4,6 +4,9 @@ import Modal from '../Modal/Modal';
 
 
 const PhotoList = ({category}) => {
+  const [currentPhoto, setCurrentPhoto] = useState();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  
   const [photos] = useState([
     {
       name: 'Grocery aisle',
@@ -103,8 +106,7 @@ const PhotoList = ({category}) => {
   ]);
 
   const currentPhotos = photos.filter((photo) => photo.category === category);
- const [currentPhoto, setCurrentPhoto] = useState();
-  const [isModalOpen, setIsModalOpen] = useState(false);
+ 
 
   function toggleModal (image, i) {
     setCurrentPhoto({...image, index: i});

@@ -26,17 +26,18 @@ export default function ContactForm () {
       }  
       if (!errorMessage) {
         setFormState({...formState, [e.target.name]:e.target.value})
+        console.log('Handle Form', formState);
       }
     };
 
-    console.log(formState);
-    console.log('errorMessage', errorMessage);
 
    function  handleSubmit(e)  {
         e.preventDefault();
+        if(!errorMessage) {
         // fetch API back end work will be iserted ...
         // here by the back end developed later
-        console.log(formState);
+        console.log('Submit Form',formState);
+        }
     };
 
     console.log(formState);
@@ -57,12 +58,13 @@ export default function ContactForm () {
                 <label htmlFor="message">Message:</label>
                 <textarea name="message" defaultValue={message} onBlur={handleChange} rows="5"  />
             </div>
-            <button type="submit">Submit</button>
             {errorMessage && (
             <div>
             <p className="error-text">{errorMessage}</p>
             </div>
                 )}
+            <button type="submit">Submit</button>
+           
         </form>
     </section>
   )
